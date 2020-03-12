@@ -50,7 +50,7 @@ def record_audio():
 
     frames = [stream.read(CHUNK) for i in range(0, int(RATE / CHUNK * RECORD_SECONDS))]
 
-    print("Inferring.................")
+    print("Inferring................")
 
     stream.stop_stream()
     stream.close()

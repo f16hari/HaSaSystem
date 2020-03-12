@@ -10,8 +10,8 @@ def Home(request):
 def InferFromAudioInput(request):
     if request.method == "POST":
         data = request.body.decode('utf-8')
-        print(json.loads(data))
-        return HttpResponse("Infering from input.......")
+        system.infer_from_post_input(data)
+        return HttpResponse("\nInference Complete.........................")
 
 @csrf_exempt
 def InferAudioFromServer(request):
