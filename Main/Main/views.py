@@ -1,6 +1,7 @@
 from django.http import HttpResponse
 from django.views.decorators.csrf import csrf_exempt
 import json
+from .bin import Main as system
 
 def Home(request):
     return  HttpResponse("Hello World ")
@@ -14,4 +15,5 @@ def InferFromAudioInput(request):
 
 @csrf_exempt
 def InferAudioFromServer(request):
-    return HttpResponse("Infering from the audio input from server........")
+    system.infer_from_server_audio()
+    return HttpResponse("\nInference Complete.........................")
